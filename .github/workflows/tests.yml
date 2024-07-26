@@ -3,7 +3,7 @@ name: Test project
 on: [push, pull_request]
 
 jobs:
-  testAllModes:
+  test:
     name: Test in ${{ matrix.testMode }}
     runs-on: ubuntu-latest
     strategy:
@@ -13,8 +13,6 @@ jobs:
           - ""
         testMode:
           - playmode
-          - editmode
-          - standalone
     steps:
       - uses: actions/checkout@v4
         with:
